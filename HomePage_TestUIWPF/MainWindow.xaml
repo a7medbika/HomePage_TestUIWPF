@@ -1,0 +1,203 @@
+﻿<Window
+    x:Class="HomePage_TestUIWPF.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:fa="http://schemas.fontawesome.io/icons/"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mi="clr-namespace:MaterialIcons;assembly=MaterialIcons"
+    xmlns:uc="clr-namespace:HomePage_TestUIWPF"
+    Title="MainWindow"
+    Width="1100"
+    Height="700"
+    AllowsTransparency="True"
+    Background="Transparent"
+    WindowStartupLocation="CenterScreen"
+    WindowStyle="None"
+    mc:Ignorable="d">
+    <Border Background="#F2F2F1" CornerRadius="7">
+        <StackPanel>
+            <!--  // Title Bar //  -->
+            <Border
+                Height="25"
+                VerticalAlignment="Top"
+                Background="#E9E9EA"
+                CornerRadius="7 7 0 0"
+                MouseDown="MoveUI">
+                <DockPanel Background="Transparent">
+                    <Image
+                        Height="35"
+                        VerticalAlignment="Center"
+                        Source="/Imgs/Logo.png" />
+                    <TextBlock
+                        VerticalAlignment="Center"
+                        FontFamily="{StaticResource P}"
+                        FontSize="14"
+                        FontStyle="Normal"
+                        FontWeight="Light"
+                        Text="Ahmed Bika" />
+                    <Border
+                        Padding="5"
+                        CornerRadius="0 7 0 0"
+                        DockPanel.Dock="Right"
+                        MouseDown="Close_Click"
+                        Style="{StaticResource IconAppClose}">
+                        <fa:ImageAwesome
+                            Width="20"
+                            Margin="5,0"
+                            VerticalAlignment="Center"
+                            Icon="Close" />
+                    </Border>
+
+                    <Border
+                        Padding="5"
+                        DockPanel.Dock="Right"
+                        Style="{StaticResource IconApp}">
+                        <fa:ImageAwesome
+                            Width="20"
+                            Margin="5,0"
+                            VerticalAlignment="Center"
+                            Icon="WindowMinimize" />
+                    </Border>
+                    <StackPanel />
+                </DockPanel>
+            </Border>
+
+            <!--  // Nav Bar //  -->
+            <DockPanel Height="75" Margin="80,20">
+                <Image
+                    Width="50"
+                    Margin="10,10,0,10"
+                    Source="/Imgs/Logo.png" />
+                <Label
+                    Margin="0,0,15,0"
+                    VerticalAlignment="Center"
+                    Content="Bika"
+                    FontFamily="{StaticResource P}"
+                    FontSize="20"
+                    FontWeight="Medium"
+                    Foreground="#1D4259" />
+
+                <Label
+                    Margin="15,5,15,0"
+                    VerticalAlignment="Center"
+                    Content="Services"
+                    FontFamily="{StaticResource P}"
+                    FontSize="15"
+                    Style="{StaticResource NavBtns}" />
+
+                <Label
+                    Margin="15,5,15,0"
+                    VerticalAlignment="Center"
+                    Content="Features"
+                    FontFamily="{StaticResource P}"
+                    FontSize="15"
+                    Style="{StaticResource NavBtns}" />
+
+                <Label
+                    Margin="15,5,15,0"
+                    VerticalAlignment="Center"
+                    Content="Pricing"
+                    FontFamily="{StaticResource P}"
+                    FontSize="15"
+                    Style="{StaticResource NavBtns}" />
+
+                <Label
+                    Margin="15,5,15,0"
+                    VerticalAlignment="Center"
+                    Content="News"
+                    FontFamily="{StaticResource P}"
+                    FontSize="15"
+                    Style="{StaticResource NavBtns}" />
+
+
+                <Button
+                    Height="30"
+                    Margin="10,10,10,5"
+                    Background="#1D4259"
+                    BorderBrush="#1D4259"
+                    BorderThickness="0"
+                    Content="Sign Up"
+                    DockPanel.Dock="Right"
+                    Foreground="#F2F2F1"
+                    Style="{StaticResource Btns}" />
+
+
+                <Button
+                    Height="30"
+                    Margin="10,10,10,5"
+                    Background="Transparent"
+                    BorderBrush="#1D4259"
+                    BorderThickness="1"
+                    Content="Log in"
+                    DockPanel.Dock="Right"
+                    Foreground="#1D4259"
+                    Style="{StaticResource BtnsL}" />
+
+                <StackPanel />
+            </DockPanel>
+            <Grid Margin="80,20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <StackPanel>
+                    <TextBlock
+                        Margin="10,30,10,0"
+                        FontFamily="{StaticResource P}"
+                        FontSize="60"
+                        FontWeight="Bold"
+                        Foreground="#1D4259"
+                        Text="Simple Way To Control"
+                        TextWrapping="Wrap" />
+
+                    <TextBlock
+                        Margin="10,-20,0,0"
+                        FontFamily="{StaticResource P}"
+                        FontSize="60"
+                        FontWeight="Bold"
+                        Foreground="#2ABF95"
+                        Text="Your Savings."
+                        TextWrapping="Wrap" />
+
+                    <TextBlock
+                        Margin="10,0,50,10"
+                        FontFamily="{StaticResource P}"
+                        FontSize="15"
+                        FontWeight="SemiBold"
+                        Foreground="#587181"
+                        Text="Give all your customers global freedom                         with the tab of thier card."
+                        TextWrapping="Wrap" />
+
+                    <Border
+                        Width="350"
+                        Height="40"
+                        Margin="15,20,0,0"
+                        HorizontalAlignment="Left"
+                        Background="Transparent"
+                        BorderBrush="#1D4259"
+                        BorderThickness="1"
+                        CornerRadius="15">
+                        <DockPanel>
+                            <Button
+                                Margin="-1"
+                                Background="#1D4259"
+                                BorderThickness="0"
+                                Content="Get Started"
+                                DockPanel.Dock="Right"
+                                Foreground="#F2F2F1"
+                                Style="{StaticResource Btns}" />
+                            <uc:MyTextBox Padding="10" Hint="Enter Your E-Mail" />
+                        </DockPanel>
+                    </Border>
+                </StackPanel>
+
+                <Image
+                    Grid.Column="1"
+                    Margin="50"
+                    Source="/Imgs/Comp.png" />
+            </Grid>
+        </StackPanel>
+    </Border>
+</Window>
